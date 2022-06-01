@@ -1,0 +1,5 @@
+com\zealon\readingcloud\gateway\common\config\RedisRateLimiterConfig.class
+com\zealon\readingcloud\gateway\filter\AuthFilter.class
+com\zealon\readingcloud\gateway\controller\FallbackController.class
+com\zealon\readingcloud\gateway\common\utils\JwtUtil.class
+com\zealon\readingcloud\gateway\GatewayApplication.class

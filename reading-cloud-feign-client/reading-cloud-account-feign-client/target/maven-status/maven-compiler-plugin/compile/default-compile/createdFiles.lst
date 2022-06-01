@@ -1,0 +1,4 @@
+com\zealon\App.class
+com\zealon\readingcloud\account\feign\client\LikeSeeClient.class
+com\zealon\readingcloud\account\feign\fallback\LikeSeeClientFallBack$1.class
+com\zealon\readingcloud\account\feign\fallback\LikeSeeClientFallBack.class
