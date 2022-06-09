@@ -32,6 +32,9 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:1001/eureka/
+  instance:
+    lease-expiration-duration-in-seconds: 10
+    lease-renewal-interval-in-seconds: 5
 
 feign:
   okhttp:
@@ -40,11 +43,11 @@ feign:
     enabled: true
   compression:
     request:
-      enabled: true
+      enabled: false
       mime-types: text/html, application/xml, application/json
       min-request-size: 1024
     response:
-      enabled: true
+      enabled: false
 
 logging:
   level:

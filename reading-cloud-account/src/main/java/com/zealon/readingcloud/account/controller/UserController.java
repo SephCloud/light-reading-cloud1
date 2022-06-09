@@ -28,7 +28,7 @@ public class UserController {
     @ApiOperation(value = "注册用户", httpMethod = "POST")
     @ApiResponses({@ApiResponse(code = 200, message = "",response = Result.class)})
     @PostMapping("/register")
-    public Result register(UserBO userBO){
+    public Result register(@RequestBody UserBO userBO){
 
         return userService.register(userBO);
 

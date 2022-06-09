@@ -1,5 +1,4 @@
 package com.zealon.readingcloud.account.feign.client;
-
 import com.zealon.readingcloud.account.feign.fallback.LikeSeeClientFallBack;
 import com.zealon.readingcloud.common.result.Result;
 import feign.Headers;
@@ -14,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 @FeignClient(contextId = "like", name = "light-reading-cloud-account",fallbackFactory = LikeSeeClientFallBack.class)
-@Headers({"acceptEncoding: gzip","contentType: application/json"})
 public interface LikeSeeClient {
 
     @GetMapping("/account/like-see/get-count")
+    @Headers({"acceptEncoding: gzip", "contentType: application/json"})
     Result<Integer> getBookLikesCount(@RequestParam("bookId") String bookId);
 
 }

@@ -29,12 +29,13 @@ import java.util.regex.Pattern;
  */
 @Component
 public class AuthFilter implements GlobalFilter, Ordered {
+
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
 
-        Set<String> whiteList = getWhiteList();
+        Set<String> whiteList = this.getWhiteList();
         String path = exchange.getRequest().getPath().toString();
-        boolean indexMatch = Pattern.matches("/index[^\\s]}*", path);
+        boolean indexMatch = Pattern.matches("/index[^\\s]*", path);
         boolean bookMatch = Pattern.matches("/book/[^\\s]*", path);
 
         String loginUri = "/account/user/login";

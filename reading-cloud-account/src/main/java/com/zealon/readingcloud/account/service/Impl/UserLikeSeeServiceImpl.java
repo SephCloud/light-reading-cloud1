@@ -5,7 +5,6 @@ import com.github.pagehelper.PageHelper;
 import com.zealon.readingcloud.account.dao.UserLikeSeeMapper;
 import com.zealon.readingcloud.account.service.UserLikeSeeService;
 import com.zealon.readingcloud.account.service.task.LikeSeeClickTask;
-import com.zealon.readingcloud.book.feign.client.BookClient;
 import com.zealon.readingcloud.common.cache.RedisAccountKey;
 import com.zealon.readingcloud.common.cache.RedisExpire;
 import com.zealon.readingcloud.common.cache.RedisService;
@@ -19,7 +18,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
+import com.zealon.readingcloud.book.feign.client.BookClient;
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;

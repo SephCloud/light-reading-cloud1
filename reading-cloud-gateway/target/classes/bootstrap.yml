@@ -19,53 +19,21 @@ spring:
             - Path=/book/**
             - Method=GET
 
-          filters:
-            #降级配置
-            - name: Hystrix
-              args:
-                name: fallbackcmd
-                fallbackUri: forward:/fallback
 
-            #限流配置
-            - name: RequestRateLimiter
-              args:
-                redis-rate-limiter.replenishRate: 3 # 每秒允许处理的请求数量
-                redis-rate-limiter.burstCapacity: 5 # 每秒最大处理的请求数量
-                key-resolver: "#{@ipKeyResolver}" #限流策略，对应策略的Bean
 
         - id: homepage-rpc
           uri: lb://light-reading-cloud-homepage
           predicates:
             - Path=/index/**
-          filters:
-            #降级配置
-            - name: Hystrix
-              args:
-                name: fallbackcmd
-                fallbackUri: forward:/fallback
-            #限流配置
-            - name: RequestRateLimiter
-              args:
-                redis-rate-limiter.replenishRate: 3
-                redis-rate-limiter.burstCapacity: 5
-                key-resolver: "#{@ipKeyResolver}"
+
 
         - id: account-center-rpc
           uri: lb://light-reading-cloud-account
           predicates:
             - Path=/account/**
-          filters:
-            #降级配置
-            - name: Hystrix
-              args:
-                name: fallbackcmd
-                fallbackUri: forward:/fallback
-            #限流配置
-            - name: RequestRateLimiter
-              args:
-                redis-rate-limiter.replenishRate: 3
-                redis-rate-limiter.burstCapacity: 5
-                key-resolver: "#{@ipKeyResolver}"
+
+
+
 
 
 eureka:
@@ -83,3 +51,4 @@ hystrix:
       coreSize: 20 #并行执行的最大线程数
       maxQueueSize: 1000 #BlockingQueue的最大线程数,默认值-1
       queueSizeRejectionThreshold: 400
+

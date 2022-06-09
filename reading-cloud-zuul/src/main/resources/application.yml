@@ -1,21 +1,30 @@
 server:
-  port: 8010
+  port: 8009
+
+
 spring:
+  main:
+    web-application-type: reactive
   application:
     name: light-reading-cloud-gateway
-
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
 
 zuul:
   routes:
-    book-center-rpc:
+    book:
       path: /book/**
-      serviceId: light-reading-cloud-book
+      serviceId: lightreadingcloudbook
 
-    account-center-rpc:
+    account:
       path: /account/**
       serviceId: light-reading-cloud-account
 
-    homepage-rpc:
+    homepage:
       path: /index/**
       serviceId: light-reading-cloud-homepage
 

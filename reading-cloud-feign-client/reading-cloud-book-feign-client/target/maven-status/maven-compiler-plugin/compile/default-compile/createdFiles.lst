@@ -1,4 +1,3 @@
-com\zealon\readingcloud\book\feign\fallback\BookClientFallBack.class
-com\zealon\App.class
 com\zealon\readingcloud\book\feign\fallback\BookClientFallBack$1.class
+com\zealon\readingcloud\book\feign\fallback\BookClientFallBack.class
 com\zealon\readingcloud\book\feign\client\BookClient.class

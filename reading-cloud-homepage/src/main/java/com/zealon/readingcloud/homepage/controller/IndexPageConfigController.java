@@ -29,6 +29,7 @@ public class IndexPageConfigController {
     @GetMapping("index")
     public Result getIndexPageByType(Integer type, Integer page, Integer limit){
 
+
         return indexPageConfigService.getIndexPageByType(type, page, limit);
     }
 

@@ -9,7 +9,7 @@ import com.zealon.readingcloud.common.result.Result;
  * 图书章节服务
  * @author hasee
  */
-public interface BookChapterService {
+public interface  BookChapterService {
 
     /**
      * 获取章节目录
